@@ -9,7 +9,7 @@ namespace Test.Controllers{
         private IRepository repository;
         public HomeController(IRepository repo)=>
             this.repository = repo;
-    }
+    
 
     public ViewResult Index(){
         int hour = DateTime.Now.Hour;
@@ -18,7 +18,7 @@ namespace Test.Controllers{
     }
 
     [HttpGet]
-    public ViewResult RsvpForm =>View();
+    public ViewResult RsvpForm() =>View();
 
     [HttpPost]
     public ViewResult RsvpForm (GuestResponse guestResponse){
@@ -33,4 +33,5 @@ namespace Test.Controllers{
 
     public ViewResult ListResponses() =>
         View(repository.Responses.Where(r=>r.WillAttend == true));
+}
 }
