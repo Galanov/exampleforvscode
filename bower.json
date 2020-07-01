@@ -1,0 +1,7 @@
+{
+    "name": "PartyInvities",
+    "private": true,
+    "dependencies": {
+        "bootstrap":"4.0.0"
+    }
+}
